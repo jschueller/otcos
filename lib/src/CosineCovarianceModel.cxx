@@ -74,8 +74,8 @@ Scalar CosineCovarianceModel::computeStandardRepresentative(const Point & tau) c
 Scalar CosineCovarianceModel::computeStandardRepresentative(const Collection<Scalar>::const_iterator & s_begin,
     const Collection<Scalar>::const_iterator & t_begin) const
 {
-  const Scalar tau = *s_begin - *t_begin;
-  return cos(4.0 * tau) * cosh((tau - M_PI) / alpha_) / cosh(M_PI / alpha_);
+  const Scalar tauOverTheta = (*s_begin - *t_begin) / scale_[0];
+  return cos(4.0 * tauOverTheta) * cosh((tauOverTheta - M_PI) / alpha_) / cosh(M_PI / alpha_);
 }
 
 /* String converter */

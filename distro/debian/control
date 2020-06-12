@@ -1,0 +1,17 @@
+Source: otcos
+Section: science
+Priority: optional
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Uploaders: Christophe Prud'homme <prudhomm@debian.org>, Denis Barbier <barbier@debian.org>
+Build-Depends: debhelper (>= 9), dh-python, quilt, cmake, libopenturns-dev, python3-openturns, python3-dev, swig
+Standards-Version: 4.1.3
+Homepage: http://www.openturns.org/
+X-Python3-Version: current
+
+Package: otcos
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, python3-openturns
+Description: openturns module otcos
+ Template module for OpenTURNS
+ It provides useful features

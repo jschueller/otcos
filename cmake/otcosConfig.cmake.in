@@ -1,0 +1,46 @@
+#                                               -*- cmake -*-
+#
+#  otcosConfig.cmake(.in)
+#
+#  Find otcos includes and libraries
+#
+#  Copyright 2005-2020 Airbus-EDF-IMACS-ONERA-Phimeca
+#
+
+# Use the following variables to compile and link against otcos:
+#  OTCOS_FOUND          - True if otcos was found on your system
+#  OTCOS_USE_FILE       - The file making otcos usable
+#  OTCOS_DEFINITIONS    - Definitions needed to build with otcos
+#  OTCOS_INCLUDE_DIRS   - List of directories where otcos' header file are
+#  OTCOS_LIBRARY        - Library name
+#  OTCOS_LIBRARIES      - List of libraries to link against
+#  OTCOS_LIBRARY_DIRS   - List of directories containing otcos' libraries
+#  OTCOS_ROOT_DIR       - The base directory of otcos
+#  OTCOS_VERSION_STRING - A human-readable string containing the version
+#  OTCOS_VERSION_MAJOR  - The major version of otcos
+#  OTCOS_VERSION_MINOR  - The minor version of otcos
+#  OTCOS_VERSION_PATCH  - The patch version of otcos
+
+@PACKAGE_INIT@
+
+set ( OTCOS_FOUND 1 )
+set ( OTCOS_USE_FILE     "@PACKAGE_OTCOS_USE_FILE@" )
+
+set ( OTCOS_DEFINITIONS  "@OTCOS_DEFINITIONS@" )
+set_and_check (OTCOS_INCLUDE_DIR  "@PACKAGE_OTCOS_INCLUDE_DIR@")
+set ( OTCOS_INCLUDE_DIRS "@PACKAGE_OTCOS_INCLUDE_DIRS@" )
+set_and_check (OTCOS_LIBRARY      "@OTCOS_LIBRARY@")
+set ( OTCOS_LIBRARIES    "@PACKAGE_OTCOS_LIBRARIES@" )
+set ( OTCOS_LIBRARY_DIRS "@PACKAGE_OTCOS_LIBRARY_DIRS@" )
+set_and_check (OTCOS_ROOT_DIR     "@PACKAGE_OTCOS_ROOT_DIR@")
+
+set ( OTCOS_VERSION_STRING "@OTCOS_VERSION_STRING@" )
+set ( OTCOS_VERSION_MAJOR  "@OTCOS_VERSION_MAJOR@" )
+set ( OTCOS_VERSION_MINOR  "@OTCOS_VERSION_MINOR@" )
+set ( OTCOS_VERSION_PATCH  "@OTCOS_VERSION_PATCH@" )
+
+set (OTCOS_SWIG_INCLUDE_DIRS "@PACKAGE_OTCOS_SWIG_INCLUDE_DIRS@")
+set (OTCOS_PYTHON@PYTHON_VERSION_MAJOR@_MODULE_PATH "@PACKAGE_PYTHON_MODULE_PATH@")
+
+# Our library dependencies (contains definitions for IMPORTED targets)
+include (${CMAKE_CURRENT_LIST_DIR}/otcos-Targets.cmake)

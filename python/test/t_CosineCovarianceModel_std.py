@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 from __future__ import print_function
-import openturns as ot
 import openturns.testing as ott
 import otcos
 import math as m

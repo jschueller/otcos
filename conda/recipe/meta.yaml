@@ -1,0 +1,44 @@
+{% set version = "0.0" %}
+
+package:
+  name: otcos
+  version: {{ version }}
+
+source:
+  fn: otcos-{{ version }}.tar.gz
+  #url: https://github.com/openturns/otrobopt/archive/v{{ version }}.tar.gz
+  url: /io/otcos-{{ version }}.tar.gz
+  sha256: eef801160bcef19ec0bc22509c072dafd3b530de8802f8a3c0997595964a192c
+
+build:
+  number: 0
+  run_exports:
+    - {{ pin_subpackage('otcos', max_pin='x.x') }}
+
+requirements:
+  build:
+    - cmake
+    - swig
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
+    - python
+    - openturns 1.15*
+  run:
+    - python
+    - openturns 1.15*
+
+test:
+  imports:
+    - otcos
+
+about:
+  home: http://openturns.org/
+  license: LGPL-3.0-or-later
+  license_family: LGPL
+  license_file: COPYING.LESSER
+  summary: Cosine cov model
+
+extra:
+  recipe-maintainers:
+    - jschueller

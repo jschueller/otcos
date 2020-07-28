@@ -5,6 +5,6 @@ API Reference
 
 .. autosummary::
     :toctree: _generated/
-    :template: class.rst_t
+    :template: classWithPlot.rst_t
   
     CosineCovarianceModel

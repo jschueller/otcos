@@ -9,7 +9,7 @@ build::
 upload::
 
     conda install anaconda-client
-    conda upload otcos*.bz2
+    anaconda upload otcos*.bz2
 
 install::
 

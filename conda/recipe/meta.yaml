@@ -5,13 +5,14 @@ package:
   version: {{ version }}
 
 source:
-  fn: otcos-{{ version }}.tar.gz
-  #url: https://github.com/openturns/otrobopt/archive/v{{ version }}.tar.gz
-  url: /io/otcos-{{ version }}.tar.gz
-  sha256: eef801160bcef19ec0bc22509c072dafd3b530de8802f8a3c0997595964a192c
+  #fn: otcos-{{ version }}.tar.gz
+  #url: /io/otcos-{{ version }}.tar.gz
+  #sha256: eef801160bcef19ec0bc22509c072dafd3b530de8802f8a3c0997595964a192c
+  git_url: https://github.com/jschueller/otcos.git
+  git_rev: 2394e464067f83caf1198a60bf6a3a486c182043
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('otcos', max_pin='x.x') }}
 

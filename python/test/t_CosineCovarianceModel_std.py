@@ -17,3 +17,4 @@ print("tau=", tau)
 print("c=", c)
 c_ref = m.cos(4*tau)*m.cosh((tau-m.pi)/alpha)/m.cosh(m.pi/alpha)
 ott.assert_almost_equal(c, c_ref)
+

@@ -10,7 +10,7 @@ def f(x):
     return [covarianceModel(x)[0, 0]]
 func = ot.PythonFunction(1, 1, f)
 func.setDescription(['$tau$', '$cov$'])
-cov_graph = func.draw(-11.0, 11.0, 129)
+cov_graph = func.draw(-8.0, 8.0, 300)
 cov_graph.setTitle(title)
 fig = plt.figure(figsize=(10, 4))
 cov_axis = fig.add_subplot(111)
